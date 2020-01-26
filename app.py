@@ -13,6 +13,6 @@ temperature = int(data['temperature'])
 humidity = int(data['humidity'])
 pressure = int(data['pressure'])
 
-wxnow_str = (f'000/000g000t{temperature}r000p000P000h{humidity}b{pressure}')
+wxnow_str = (f'000/000g000t{str(temperature).zfill(3)}r000p000P000h{humidity}b{pressure}')
 
 print(wxnow_str)
