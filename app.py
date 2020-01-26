@@ -3,15 +3,12 @@
 # Script to convert JSON weather data into
 # a format suitable for transmissting via APRS
 # 
-# Dana Simmons 2019
+# Dana Simmons 2020
 
-import requests
+import sys,json
 
+data = json.load(sys.stdin)
 
-WEATHER_STATION_ADDRESS = "http://10.1.1.252/i"
-
-resp = requests.get(WEATHER_STATION_ADDRESS)
-data = resp.json()
 temperature = int(data['temperature'])
 humidity = int(data['humidity'])
 pressure = int(data['pressure'])
